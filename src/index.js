@@ -11,7 +11,10 @@ root.render(
   </React.StrictMode>
 );
 
+// className h1 composant banner.js
+/*console.log( "class title h1 banner",document.getElementsByClassName("title"))*/
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

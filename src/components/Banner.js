@@ -1,8 +1,16 @@
+import "../styles/Banner.css"
 function Banner() {
     return(
         <header>
-        <h1>La maison Jungle</h1>
+        <div className= "title">
+            <h1 style={{
+                 margin:" 30% auto",
+                 color:" white"
+                }}>
+             La maison Jungle</h1>
+        </div>
         </header>
+        
         
     );
 
