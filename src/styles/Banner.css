@@ -1,12 +1,37 @@
-.title {
+.banner {
+    width: 100%;
+    display: flex;
+    
+}
+
+
+
+.banner__title {
    
-    border:1px solid rgb(226,160,160);
-    background-color: rgba(226,160,160,0.5);
-    border-radius: 50%;
+   border:1px solid rgb(226,160,160);
+   background-color: rgba(226,160,160,0.5);
+   border-radius: 50%;
    text-align: center;
    width: 200px;
    height:200px;
    margin: 0 auto;
- 
- 
+   position: relative;
+   transition: transform 1s ease-in-out;
 }
+
+.banner__title:hover{
+    transform: rotate(360deg) 
+    /* difference avec keyframes, les transition revient a leur etat initial et transition a besoin d un declencheur à la différence des keyframes et propriétés animation*/
+}
+
+.banner__img-logo {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left:0
+
+}
+
+.banner__img-logo img{
+    width: 100%;
+ }

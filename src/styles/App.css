@@ -1,3 +1,10 @@
+main{
+  width: 100%;
+  display: flex;
+  background: black;
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
 }
