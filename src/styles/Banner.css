@@ -22,7 +22,7 @@
 
 .banner__title:hover{
     transform: rotate(360deg) 
-    /* difference avec keyframes, les transition revient a leur etat initial et transition a besoin d un declencheur à la différence des keyframes et propriétés animation*/
+    /* difference avec keyframes, les transition revient a leur etat initial et transition a besoin d un declencheur(comme les pseudoclass) à la différence des keyframes(qui animent sans avoir besoin de changement d etat ou de declencheur pseudoclass)et propriétés animation*/
 }
 
 .banner__img-logo {
