@@ -1,4 +1,4 @@
-export const plantList = [
+const  plantList = [
 	{
 		name: 'monstera',
 		category: 'classique',
@@ -45,3 +45,5 @@ export const plantList = [
 		id: '9vn'
 	}
 ]
+
+export default plantList
