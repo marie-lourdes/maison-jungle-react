@@ -30,7 +30,7 @@ function ShoppingList() {
     const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
-		[]// deux parametre la valeur initial utilisé par l accumulateur au premier appel de reduce()
+		[]// le tableau vide:deuxieme parametre la valeur initial utilisé par l accumulateur au premier appel de reduce()
         	
 	)
     console.log( "categorie", categories)
