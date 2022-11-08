@@ -44,7 +44,7 @@ function ShoppingList() {
 			</ul>
 			<ul>
 				{plantList.map((plant) => (
-					<li Key={plant.id}>{plant.name}</li>// clé unique crée avec les id des plante
+					<li Key={plant.id}>{plant.name} {plant.isBestSale ? <span>&#128293;</span>: <span>&#128078;</span> }</li>// clé unique crée avec les id des plante
 				))}
 			</ul>
 		</div>

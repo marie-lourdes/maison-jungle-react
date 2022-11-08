@@ -4,22 +4,26 @@ const plantList = [
 	{
 		name: 'monstera',
 		category: 'classique',
-		id: '1ed'
+		id: '1ed',
+        isBestSale: true
 	},
 	{
 		name: 'ficus lyrata',
 		category: 'classique',
-		id: '2ab'
+		id: '2ab',
+        isBestSale: true
 	},
 	{
 		name: 'pothos argenté',
 		category: 'classique',
-		id: '3sd'
+		id: '3sd',
+        isBestSale: false
 	},
 	{
 		name: 'yucca',
 		category: 'classique',
-		id: '4kk'
+		id: '4kk',
+        isBestSale: false
 	},
 	{
 		name: 'olivier',
