@@ -5,7 +5,8 @@ const plantList = [
 		name: 'monstera',
 		category: 'classique',
 		id: '1ed',
-        isBestSale: true
+        isBestSale: true,
+		isSpecialOffer: true
 	},
 	{
 		name: 'ficus lyrata',
@@ -23,7 +24,8 @@ const plantList = [
 		name: 'yucca',
 		category: 'classique',
 		id: '4kk',
-        isBestSale: false
+        isBestSale: false,
+		isSpecialOffer: true
 	},
 	{
 		name: 'olivier',
@@ -43,7 +45,8 @@ const plantList = [
 	{
 		name: 'aloe',
 		category: 'plante grasse',
-		id: '8fp'
+		id: '8fp',
+		isSpecialOffer: true
 	},
 	{
 		name: 'succulente',

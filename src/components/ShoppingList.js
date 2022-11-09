@@ -42,10 +42,15 @@ function ShoppingList() {
 					<li Key={cat}>{cat}</li> // une clé unique crée avec la valeur de chaque categorie
 				))}
 			</ul>
-			<ul>
+			<ul className="list-plante">
 				{plantList.map((plant) => (
-					<li Key={plant.id}>{plant.name} {(plant.isBestSale || plant.category === "classique") && <span>&#128293;</span> }</li>// clé unique crée avec les id des plante
-				))}
+					<li Key={plant.id} className="list-plante__list-item">
+                         {/* clé unique crée avec les id des plante*/}
+                        {plant.name}
+                        {(plant.isBestSale || plant.category === "classique") && <span>&#128293;</span> }
+                        { plant.isSpecialOffer && <div className= "list-item--promo"> Soldes</div>}
+                    </li>
+                ))}
 			</ul>
 		</div>
 	)
