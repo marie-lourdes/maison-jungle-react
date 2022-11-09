@@ -3,6 +3,11 @@ import logo from "../assets/logo.png"// import declare la variable logo et impor
 function Banner() {
     const title = "la maison jungle";
     // pas d espace en html
+    //le mois de janvier est 0
+    const currentMonth = new Date().getMonth();
+    // valeur booléenne pour la variable isSpring pour  evaluer la valeur avec les operateurs ternaires
+    const isSpring = currentMonth >= 2 && currentMonth <= 5; 
+    const recommandation = isSpring ? <div className="recommandation"> c'est le printemps, rempotez &#127793; </div> : <div className="recommandation"> ce n 'est pas le moment de rempoter</div>
     return(
         <header className="banner"> 
             <div className="banner__title">
@@ -15,11 +20,9 @@ function Banner() {
                     }}>
                 {title}</h1>
             </div>
-        </header>
-        
-        
+            {recommandation}
+        </header>          
     );
-
 }
 
 export default Banner;
