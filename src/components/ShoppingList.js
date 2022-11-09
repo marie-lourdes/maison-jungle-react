@@ -1,4 +1,5 @@
 import plantList from "../datas/dataplantList"
+import CareScale from "./CareScale"
 import "../styles/ShoppingList.css"
 
  // les accolades pour que le langage JSX interprete les expressions javascript à ne pas confondre le string d interpolation ${}
@@ -49,6 +50,8 @@ function ShoppingList() {
                         {plant.name}
                         {(plant.isBestSale || plant.category === "classique") && <span>&#128293;</span> }
                         { plant.isSpecialOffer && <div className= "list-item--promo"> Soldes</div>}
+                        <CareScale scaleValue={plant.light}/>
+                        {/* determine la valeur de la propriété scaleValue du composant CareScale*/}
                     </li>
                 ))}
 			</ul>
