@@ -1,6 +1,7 @@
 import plantList from "../datas/dataplantList"
 import CareScale from "./CareScale"
 import "../styles/ShoppingList.css"
+import React from "react"
 
  // les accolades pour que le langage JSX interprete les expressions javascript à ne pas confondre le string d interpolation ${}
     //iteration sur chaque element du tableau plantList avec la methode map() et sa fonction callback qui prend en parametre plant du tableau plantList
@@ -50,8 +51,11 @@ function ShoppingList() {
                         {plant.name}
                         {(plant.isBestSale || plant.category === "classique") && <span>&#128293;</span> }
                         { plant.isSpecialOffer && <div className= "list-item--promo"> Soldes</div>}
-                        <CareScale scaleValue={plant.light}/>
-                        {/* determine la valeur de la propriété scaleValue du composant CareScale*/}
+                        <CareScale careType= "light" scaleValue={plant.light}/>
+                        <CareScale careType= "water" scaleValue={plant.water}/>
+
+                       
+                        {/* determine la valeur de la propriété scaleValue, careType de l objet props du composant CareScale*/}
                     </li>
                 ))}
 			</ul>
@@ -67,8 +71,8 @@ function ShoppingList() {
 					<li Key={plant.id}>{plant.name} {plant.isBestSale ? <span>&#128293;</span>: <span>&#128078;</span> }</li>// clé unique crée avec les id des plante
 				))}*/
 
+             
 export default ShoppingList
-
 
 
 /*...................SHOPPINGLIST AVANT L INSERTION DE LA LISTE ET DES CATEGORIES DES PLANTES DANS LE DOSSIER DATAS/DATAPLANTLIST
