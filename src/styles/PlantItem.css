@@ -1,0 +1,59 @@
+.list-plante_card {
+    width: 30%;
+    align-items: center;
+	flex-direction: column;
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+ul.list-plante .list-plante__list-item {
+   
+    border:3px solid rgb(226,160,160);
+	border-radius: 10px;
+	height: 250px;
+	width: 100%;
+	
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+    box-sizing: border-box;/* recalculer dans sa dimension de la div parent le padding ou sa taille lorsque l enfant change de taille ou des padding ajouté */
+    overflow: hidden;
+}
+
+.list-item__cover {
+    width: 100%;
+    
+    
+    
+}
+
+.list-item__cover img {
+    width:110%;
+    min-height: 250px;
+    object-fit: cover;
+    display: block;
+
+}
+
+.list-item--promo {
+
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	font-weight: 500;
+	color: white;
+	padding: 5px 10px;
+	background-color:#569749;
+}
+
+.list-plante_description {
+    
+    text-align: center;
+    background-color: rgba(238,248,236,0.5);
+    margin-top:5px;
+    text-transform: uppercase;
+    padding:5px 0;
+   
+}
