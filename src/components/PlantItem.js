@@ -8,7 +8,15 @@ function PlantItem({id, cover, name, water, light, category, isBestSale, isSpeci
 	<div className="list-plante_card" >
 		<li Key={id} className="list-plante__list-item " >
 			{/* clé unique crée avec les id des plante*/}
-			<div className="list-item__cover">
+			<div className="list-item__cover" onClick={()=> handleClick(name)}>
+				{/* sans le stop propagation de l evenement le clic sur la div image remonte au parent, l evenement clic crée remonte au parent  "list-plante card"qui dans le css agrandit la vignette lors du clic
+				-si je ne clique que sur la vignette en evitant l image l agrandissemnt a son comportement normal defini le css snas declencher le clic au niveau de l element enfant
+				les evenement clic se propage et remonte toujours au parentsn pas pas du parents à l enfant */}
+
+
+			{/* l evenment onClick devient asynchrone avec la fonction callback
+			//la callback attend l evenement onClick pour executer la fontion evenment handleClick
+			//snas la focntion callback, l evenment est ecouté en meme temps sur tous les images sans meme que je clique sur lun des images*/}
 				<img src={cover} alt={`${name} cover`} />
 			</div>
 			
@@ -29,5 +37,16 @@ function PlantItem({id, cover, name, water, light, category, isBestSale, isSpeci
 	)
 
 } 
+
+// fonction evenement clic sur l image
+
+function handleClick(name){
+	alert(`ceci est un ${name} clic`)
+	
+} 
+
+
+
+
 
 export default PlantItem
