@@ -1,5 +1,5 @@
 import plantList from "../datas/dataplantList"
-import CareScale from "./CareScale"
+import PlantItem from "./PlantItem"
 import "../styles/ShoppingList.css"
 import React from "react"
 
@@ -45,19 +45,19 @@ function ShoppingList() {
 				))}
 			</ul>
 			<ul className="list-plante">
-				{plantList.map((plant) => (
-					<li Key={plant.id} className="list-plante__list-item">
-                         {/* clé unique crée avec les id des plante*/}
-                        {plant.name}
-                        {(plant.isBestSale || plant.category === "classique") && <span>&#128293;</span> }
-                        { plant.isSpecialOffer && <div className= "list-item--promo"> Soldes</div>}
-                        <CareScale careType= "light" scaleValue={plant.light}/>
-                        <CareScale careType= "water" scaleValue={plant.water}/>
-
-                       
-                        {/* determine la valeur de la propriété scaleValue, careType de l objet props du composant CareScale*/}
-                    </li>
-                ))}
+				{plantList.map( ({id, Cover, name, water, light, category, isBestSale, isSpecialOffer}) => 
+                    <PlantItem
+                    id={id}
+                    cover={Cover}
+                    name={name}
+                    water={water}
+                    light={light}
+                    category={category}
+                    isBestSale={isBestSale}
+                    isSpecialOffer={isSpecialOffer}
+                />
+					
+                )}
 			</ul>
 		</div>
 	)
