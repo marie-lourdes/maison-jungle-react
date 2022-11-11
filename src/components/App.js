@@ -17,5 +17,5 @@ function App() {
     )
 }
 
-
+console.log("react app",React)
 export default App;

@@ -47,13 +47,15 @@ function CareScale(props){
 export default CareScale;
 
 
-const objetDestructure ={a:"marielourdes",b:"marie", c:"millie", d:"marie-lourdes"}
+let objetDestructure ={a:"marielourdes",b:"marie", c:"millie", d:"marie-lourdes"}
 
 console.log(objetDestructure)
 
-const{a,...rest } = objetDestructure ;
+let{a,...rest } = objetDestructure ;
+console.log("a",a)
+a= "leperlier"
 console.log("l objet copié avec ses propriété et valeur qui ne sont pas celle de l objet a", rest)
 const {...b}= objetDestructure;
-console.log("a",a)
+
 console.log("b objet copié collé toutes les proprités et valeurs de l \"objet destructuré\"  y compris de l objet", b)
 

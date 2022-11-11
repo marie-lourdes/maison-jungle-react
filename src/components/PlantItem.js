@@ -14,8 +14,8 @@ function PlantItem({id, cover, name, water, light, category, isBestSale, isSpeci
 				les evenement clic se propage et remonte toujours au parentsn pas pas du parents à l enfant */}
 
 
-			{/* l evenment onClick devient asynchrone avec la fonction callback
-			//la callback attend l evenement onClick pour executer la fontion evenment handleClick
+			{/* l evenment onClick devient asynchrone avec la fonction callback de l evenement qui est appelé par la fonction anonyme
+			//la fonction anonyme de l evenement onClick apelle la fonction d evenement handleclick devenu une fonction callbacK qui attend l appel de la fonction anonyme de onclick pour executer la fontion evenment handleClick
 			//snas la focntion callback, l evenment est ecouté en meme temps sur tous les images sans meme que je clique sur lun des images*/}
 				<img src={cover} alt={`${name} cover`} />
 			</div>
