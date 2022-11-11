@@ -27,9 +27,16 @@ button {
     width: 40%;
     font-weight: 600;
     color:#569749;
+
     background-image: linear-gradient(to right,#569749 0.5%,rgba(255, 255, 255, 0.05) 98%);
+    transition: color 1500ms ease-out, background-color 2s ease-in;
   
     
+}
+
+button:hover {
+    color:#66381A;
+    background-color: #66381A;
 }
 
 .forms {
@@ -55,7 +62,7 @@ form {
 }
 input {
     padding:1em;
-    width:90%;
+    width:100%;
     
 }
 
