@@ -1,8 +1,10 @@
 .shopping-list {
-    width: 70%;
+    width: 65%;
 	justify-content: center;
 	display: flex;
 	flex-direction:  column;
+	background: url("../assets/fond-ecran.jpg"); 
+	filter: saturate(120%)
 	
 	
    

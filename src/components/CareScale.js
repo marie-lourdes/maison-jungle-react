@@ -23,6 +23,8 @@ function CareScale({scaleValue, careType, care}){
     )
 }
 
+
+// evenement rect onClick et alerte pour l entretirn de lumiere ou d arrosage
 function handleClickCareScale(scaleValue, careType, care){
     switch(scaleValue){
         case 1:

@@ -29,12 +29,9 @@ ul.list-plante .list-plante__list-item {
 }
 
 .list-item__cover {
-    width: 100%;
-    
-    
-    
+    width: 100%;  
+    cursor: pointer;
 }
-
 
 .list-item__cover img {
     width:110%;
@@ -64,11 +61,13 @@ ul.list-plante .list-plante__list-item {
     text-transform: uppercase;
     padding: 5px 0px 5px 10px;
     white-space: nowrap;
+    cursor: pointer;
    
 }
 
 .description_icon-weather {
     font-size: 0.6rem;
     display:flex;
+    margin: 3px 0
    
 }

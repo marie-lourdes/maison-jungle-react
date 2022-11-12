@@ -2,7 +2,8 @@ import React from 'react';
 import Banner from "./Banner";
 import Cart from "./Cart";
 import ShoppingList from "./ShoppingList";
-import "../styles/App.css"
+import Footer from "./Footer";
+import "../styles/App.css";
 
 
 function App() {
@@ -10,9 +11,11 @@ function App() {
        
         <Banner/>
         <main>
-        <Cart/>
-        <ShoppingList/>
+			<Cart/>
+			<ShoppingList/>
         </main>
+		<div className="separator"></div>
+		<Footer/>
         </React.Fragment>
     )
 }

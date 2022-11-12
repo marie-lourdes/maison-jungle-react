@@ -1,14 +1,23 @@
 main{
   width: 100%;
   display: flex;
-  background: black url("../assets/fond-ecran.jpg"); 
+  justify-content: space-around;
   min-height: 100vh;
+ /* border-bottom: 5px outset  #66381A; */
+ box-sizing: border-box;
+ 
 }
 
 .App {
   text-align: center;
 }
 
+.separator {
+  height:5px;
+  width:100%;
+  background-image: linear-gradient(#66381A 15%, white);
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
