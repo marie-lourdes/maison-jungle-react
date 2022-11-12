@@ -1,7 +1,8 @@
 /*1 methode avec  les variables scalevalue et caretype qui est declaré directement comme propriété de l objet props du parametre de la fonction du composant
 et les valeur definis lors de l appel de la fonction du composant <CareScale scaleValue="" cartype="" /> dans shoopingList*/
 
-function CareScale({scaleValue, careType}){
+
+function CareScale({scaleValue, careType, care}){
   
     const range = [1, 2, 3];
      /* si la valeur lumière  de la props caretype = light   la valeur de la prop caretype="water" de la propriété du composant CareScale */
@@ -11,7 +12,7 @@ function CareScale({scaleValue, careType}){
     // copier coller le shorcode sur le site emojipedia l emoji apparit ds le code
 
     return (
-        <div>
+        <div onClick={() =>handleClickCareScale( scaleValue, careType, care)}>
             {range.map((rangeElem) =>
           /* Si la valeur de la prop scaleValue est superieur ou egale à la donnée echelle du tableau,
          on génére un span soleil ou une goute d eau (selon la  valeur de la prop "caretype du composant" stocké dans scaleType) dans la div du composant, map itere sur chaque element du tableau range est execute le code de generation de span
@@ -20,6 +21,30 @@ function CareScale({scaleValue, careType}){
             )}
         </div>
     )
+}
+
+function handleClickCareScale(scaleValue, careType, care){
+    switch(scaleValue){
+        case 1:
+            alert(`${careType}: cette plante requière peu  ${care}`)
+        break;
+
+        case 2:
+            alert( `${careType}: cette plante requière moderement ${care}`)
+        break;
+
+        case 3:
+            alert( `${careType}: cette plante requière beaucoup  ${care}`)
+        break;
+
+        default:
+        alert( `cette plante ne requière pas d entretien`)
+
+
+    }
+   
+
+    //alert(" clic arrosage et lumiere");
 }
 
 
