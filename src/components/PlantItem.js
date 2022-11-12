@@ -27,9 +27,11 @@ function PlantItem({id, cover, name, water, light, category, isBestSale, isSpeci
             {/* determine la valeur de la propriété scaleValue, careType de l objet props du composant CareScale*/}
         </li>
 		<div className= "list-plante_description">
-		{name}
+			<div>
+			{name}
 			{(isBestSale || category === "classique") && <span>&#128293;</span> }
-			<CareScale careType= "light" care="de lumiere" scaleValue={light}/>
+			</div>
+		    <CareScale careType= "light" care="de lumiere" scaleValue={light}/>
 			<CareScale careType= "water" care="d'arrosage" scaleValue={water}/>
 			{/* toujours encapsuler deux composant imbriquer dans un element parents*/}
 	    </div>
