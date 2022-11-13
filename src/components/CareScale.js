@@ -1,8 +1,14 @@
 /*1 methode avec  les variables scalevalue et caretype qui est declaré directement comme propriété de l objet props du parametre de la fonction du composant
 et les valeur definis lors de l appel de la fonction du composant <CareScale scaleValue="" cartype="" /> dans shoopingList*/
 
+//dictionnaire des quantité
+const quantityLabel = {
+	1: 'peu',
+	2: 'modérément',
+	3: 'beaucoup'
+}
 
-function CareScale({scaleValue, careType, care}){
+function CareScale({scaleValue, careType}){
   
     const range = [1, 2, 3];
      /* si la valeur lumière  de la props caretype = light   la valeur de la prop caretype="water" de la propriété du composant CareScale */
@@ -12,7 +18,7 @@ function CareScale({scaleValue, careType, care}){
     // copier coller le shorcode sur le site emojipedia l emoji apparit ds le code
 
     return (
-        <div className="description_icon-weather" onClick={() =>handleClickCareScale( scaleValue, careType, care)}>
+        <div className="description_icon-weather" onClick={() =>handleClickCareScale( scaleValue, careType)}>
             {range.map((rangeElem) =>
           /* Si la valeur de la prop scaleValue est superieur ou egale à la donnée echelle du tableau,
          on génére un span soleil ou une goute d eau (selon la  valeur de la prop "caretype du composant" stocké dans scaleType) dans la div du composant, map itere sur chaque element du tableau range est execute le code de generation de span
@@ -24,30 +30,15 @@ function CareScale({scaleValue, careType, care}){
 }
 
 
-// evenement rect onClick et alerte pour l entretirn de lumiere ou d arrosage
-function handleClickCareScale(scaleValue, careType, care){
-    switch(scaleValue){
-        case 1:
-            alert(`${careType}: cette plante requière peu  ${care}`)
-        break;
+// evenement rect onClick et alerte pour l entretien de lumiere ou d arrosage avec la methode du dico quantitylabel ou la methode avec switch et les valeur de scaleValue
+function handleClickCareScale(scaleValue, careType){
+    alert( `cette plante requiert ${quantityLabel[scaleValue]} ${careType === "light" ? "de lumière" : "d'arrosage" }`)
 
-        case 2:
-            alert( `${careType}: cette plante requière moderement ${care}`)
-        break;
-
-        case 3:
-            alert( `${careType}: cette plante requière beaucoup  ${care}`)
-        break;
-
-        default:
-        alert( `cette plante ne requière pas d entretien`)
-
-
-    }
+}
    
 
     //alert(" clic arrosage et lumiere");
-}
+
 
 
 /* 2-methode d affectation dextructuré des variables scalevalue et caretype qui est declaré et recupere la valeur des propriétés de l objet prop

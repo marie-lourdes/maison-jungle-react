@@ -13,9 +13,10 @@ function Footer() {
 				Pour les passionné·e·s de plantes 🌿🌱🌵
 			</div>
 			{/*evenement blur ajouté à la div input lorqu on valide l input et on clique hors de la div de l input*/}
-			<div className='footer_elem' onBlur={()=>handleBlur()}>
+			<div className='footer_elem'>
+				{/* on peut chaines la creation des evenement pour un seul element: onChange et onBlur*/}
 				<label>Laissez-nous votre mail :
-					<input type= "text" value= {inputValue} onChange={(e)=>	setInputValue(e.target.value) } />
+					<input type= "text" placeholder=" Entrez votre email" value= {inputValue} onChange={(e)=>setInputValue(e.target.value) }  onBlur={()=>handleBlur()} />
 				</label>
 			</div>
 		</footer>

@@ -31,8 +31,8 @@ function PlantItem({id, cover, name, water, light, category, isBestSale, isSpeci
 			{name}
 			{(isBestSale || category === "classique") && <span>&#128293;</span> }
 			</div>
-		    <CareScale careType= "light" care="de lumiere" scaleValue={light}/>
-			<CareScale careType= "water" care="d'arrosage" scaleValue={water}/>
+		    <CareScale careType= "light"  scaleValue={light}/>
+			<CareScale careType= "water"  scaleValue={water}/>
 			{/* toujours encapsuler deux composant imbriquer dans un element parents*/}
 	    </div>
 	</div>
