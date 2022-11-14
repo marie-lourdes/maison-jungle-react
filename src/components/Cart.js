@@ -7,7 +7,7 @@ function Cart() {
     //State composant cart avec valeur initial 0 pour le nombre d element ajouté au panier
     const [cart, updateCart] = useState(0);
     //State isOpen avec valeur initial false pour l ouverture ou la fermeture du panier
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)// panier ferme par defaut false
 
  
     return (
