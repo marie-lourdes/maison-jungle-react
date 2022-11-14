@@ -43,7 +43,7 @@ function FormCart (props, context, updater){
 function handleSubmit(e){
     e.preventDefault()
     const inputForm = e.target["my-input"].value;
-    alert( `imputform ${inputForm}`);
+    alert( `imput form: ${inputForm}`);
 
 
 }
