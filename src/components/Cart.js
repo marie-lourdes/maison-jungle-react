@@ -13,7 +13,10 @@ function Cart() {
     return (
     <div  className ="cart">
       { isOpen ?
-      <div>
+      //si le panier est ouvert
+      //- on affiche un bouton fermer le panier qui au click met a jour le state isOpen a false et renverra à la deuxieme condition qui affiche le bouton ouvrir le panier
+     // le contenu du panier avec les monsteras ajouté au panier
+     <div>
         <button className="button-toogle button-toogle--close" onClick= {() => setIsOpen(false)}>Fermer le panier ❌</button>
         <div>
             <h2>Panier</h2>
@@ -26,6 +29,9 @@ function Cart() {
             <h3>Total : {monsteraPrice*cart}€</h3>
         </div>
       </div> : 
+      // si c est false, le panier est fermé on affiche un button toogle ouvrir le panier 
+      // qui au click en met a jour le state isOpen avec setIsOpen qui renverra true  à la premier condition true et genere le panier
+
       <div>
       <button  className="button-toogle button-toogle--open" onClick={() => setIsOpen(true)}>Ouvrir le panier</button>
       </div>}
