@@ -27,6 +27,8 @@ function Cart() {
       
             {/* calcul du total avec la valeur actuel de sate cart enregistré par la fonction setState (fonction setState(comprenant la valeur actuel en parametre) valeur de retour de useState) updateCart*/}
             <h3>Total : {monsteraPrice*cart}€</h3>
+            {/*initialise la valeur du Stae cart a zero pour vider le panier*/}
+            <button className="emptyCart" onClick={() => updateCart(0)}>Vider le panier</button>
         </div>
       </div> : 
       // si c est false, le panier est fermé on affiche un button toogle ouvrir le panier 
