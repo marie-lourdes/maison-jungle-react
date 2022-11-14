@@ -1,5 +1,6 @@
 import React from "react";
 import {useState}  from "react"; 
+import "../styles/FormCart.css"
 function FormCart (props, context, updater){
     
     const [inputValue, setInputValue] = useState('Posez votre question ici')//l etat initial de l inputvalue qui prend la valeur de useState

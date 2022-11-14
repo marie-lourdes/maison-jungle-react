@@ -1,0 +1,59 @@
+.forms {
+    margin-top:30px;
+}
+
+.forms button {
+    border-radius:20px;
+    border: 1px solid #66381A ;
+    margin: 0 auto;
+    margin-top:10px;
+    padding: 0.6em;
+    font-size: 0.9em;
+    width: 40%;
+    font-weight: 600;
+    color:#569749;
+
+    background-image: linear-gradient(to right,#569749 0.5%,rgba(255, 255, 255, 0.05) 98%);
+    transition: color 1500ms ease-out, background-color 2s ease-in;
+  
+    
+}
+
+.forms button:hover {
+    color:#66381A;
+    background-color: #66381A;
+}
+
+
+  input, textarea {
+    color: #66381A;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    border: 0
+    
+  }
+
+textarea {
+    padding:2em;
+}
+
+form {
+    display: flex;
+    margin-top:10px;
+    max-width: 90%;
+    flex-wrap: wrap;
+   
+}
+
+input {
+    padding:1em;
+    width:100%;
+    
+}
+
+.question-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 10px;
+}
