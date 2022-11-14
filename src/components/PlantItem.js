@@ -1,12 +1,13 @@
+import React from 'react'
 import CareScale from './CareScale'
 import '../styles/PlantItem.css'
-import React from 'react'
+
 
 //Declaration des props dans l objet Props de la fontion composant PlantItem
-function PlantItem({id, cover, name, water, light, category, isBestSale, isSpecialOffer}){
+function PlantItem({  cover, name, water, light, category,price, isBestSale, isSpecialOffer }){
 	return (
-	<div className="list-plante_card" >
-		<li Key={id} className="list-plante__list-item " >
+	<div  >
+		<li  className="list-plante__list-item " >
 			{/* clé unique crée avec les id des plante*/}
 			<div className="list-item__cover" onClick={()=> handleClick(name)}>
 				{/* sans le stop propagation de l evenement le clic sur la div image remonte au parent, l evenement clic crée remonte au parent  "list-plante card"qui dans le css agrandit la vignette lors du clic
@@ -35,6 +36,7 @@ function PlantItem({id, cover, name, water, light, category, isBestSale, isSpeci
 			<CareScale careType= "water"  scaleValue={water}/>
 			{/* toujours encapsuler deux composant imbriquer dans un element parents*/}
 	    </div>
+		
 	</div>
 	)
 

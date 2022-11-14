@@ -1,11 +1,15 @@
 import React from "react"
-import {useState} from "react"
+import { useState } from "react"
 import FormCart from "./FormCart"
 import "../styles/Cart.css"
-function Cart() {
-    const monsteraPrice = 8
-    //State composant cart avec valeur initial 0 pour le nombre d element ajouté au panier
-    const [cart, updateCart] = useState(0);
+// recuperation du contenu du State parent commun APP,  et la fonction de mise à jour setState dans les props enfants  ici CART
+//pour que les enfants  de cart puisse mettre a jour le state du parent (app.js) de Cart
+function Cart({cart, updateCart}) {
+  const total = cart.reduce(
+		(acc, plantType) => acc + plantType.amount * plantType.price,
+		0
+	)
+   
     //State isOpen avec valeur initial false pour l ouverture ou la fermeture du panier
     const [isOpen, setIsOpen] = useState(false)// panier ferme par defaut false
 
@@ -21,14 +25,18 @@ function Cart() {
         <div>
             <h2>Panier</h2>
             <ul>
-              <li> {cart} Monstera : {monsteraPrice}€</li>  
+            {cart.map(({ name, price, amount }, index) => (
+							<div key={`${name}-${index}`}>
+								{name} {price}€ x {amount}
+							</div>
+						))}
             </ul>
-            <button onClick={()=> updateCart(cart +1)}>Ajouter</button>
+            
       
             {/* calcul du total avec la valeur actuel de sate cart enregistré par la fonction setState (fonction setState(comprenant la valeur actuel en parametre) valeur de retour de useState) updateCart*/}
-            <h3>Total : {monsteraPrice*cart}€</h3>
+            <h3>Total : {total}€</h3>
             {/*initialise la valeur du Stae cart a zero pour vider le panier*/}
-            <button className="emptyCart" onClick={() => updateCart(0)}>Vider le panier</button>
+            <button className="emptyCart" onClick={() => updateCart([])}>Vider le panier</button>
         </div>
       </div> : 
       // si c est false, le panier est fermé on affiche un button toogle ouvrir le panier 

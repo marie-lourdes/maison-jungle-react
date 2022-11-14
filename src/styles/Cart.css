@@ -15,8 +15,6 @@
     display: flex;
     flex-flow: wrap column;
     width: 100%;
-   
-
 }
 
 .button-toogle {
@@ -28,20 +26,19 @@
     top: 60%;
     text-align: right;
     cursor: pointer;
- 
 }
+
 .button-toogle:hover {
     color:#66381A;
 }
+
 .button-toogle.button-toogle--close {
     left: 65%;
-    top: 6%;
-   
+    top: 6%;  
 }
 
 .button-toogle.button-toogle--open {
-    left: 65%;
-    
+    left: 65%;   
 }
 
 

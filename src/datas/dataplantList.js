@@ -19,7 +19,8 @@ const plantList = [
 		isSpecialOffer: true,
 		light: 1,
 		water: 2,
-		Cover: monstera
+		Cover: monstera,
+		price: 8
 	},
 	{
 		name: 'ficus lyrata',
@@ -28,7 +29,8 @@ const plantList = [
         isBestSale: true,
 		light: 2,
 		water: 3,
-		Cover: ficusLirata
+		Cover: ficusLirata,
+		price: 24
 	},
 	{
 		name: 'pothos argenté',
@@ -37,7 +39,8 @@ const plantList = [
         isBestSale: false,
 		light: 1,
 		water: 2,
-		Cover: pothos
+		Cover: pothos,
+		price: 45
 	},
 	{
 		name: 'yucca',
@@ -47,7 +50,8 @@ const plantList = [
 		isSpecialOffer: true,
 		light: 3,
 		water: 2,
-		Cover: yucca
+		Cover: yucca,
+		price: 10
 	},
 	{
 		name: 'olivier',
@@ -55,7 +59,8 @@ const plantList = [
 		id: '5pl',
 		light: 2,
 		water: 2,
-		Cover: olivier
+		Cover: olivier,
+		price: 8
 	},
 	{
 		name: 'géranium',
@@ -63,7 +68,8 @@ const plantList = [
 		id: '6uo',
 		light: 3,
 		water: 1,
-		Cover: geranium
+		Cover: geranium,
+		price: 10
 	},
 	{
 		name: 'basilique',
@@ -71,7 +77,8 @@ const plantList = [
 		id: '7ie',
 		light: 3,
 		water: 3,
-		Cover: basilique
+		Cover: basilique,
+		price: 15
 	},
 	{
 		name: 'aloe',
@@ -80,7 +87,8 @@ const plantList = [
 		isSpecialOffer: true,
 		light: 1,
 		water: 2,
-		Cover: aloe
+		Cover: aloe,
+		price: 20
 	},
 	{
 		name: 'succulente',
@@ -88,7 +96,8 @@ const plantList = [
 		id: '9vn',
 		light: 1,
 		water: 1,
-		Cover: succulente
+		Cover: succulente,
+		price: 8
 	}
 ]
 

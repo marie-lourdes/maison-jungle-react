@@ -1,7 +1,8 @@
+import React from "react"
 import plantList from "../datas/dataplantList"
 import PlantItem from "./PlantItem"
 import "../styles/ShoppingList.css"
-import React from "react"
+
 
  // les accolades pour que le langage JSX interprete les expressions javascript à ne pas confondre le string d interpolation ${}
     //iteration sur chaque element du tableau plantList avec la methode map() et sa fonction callback qui prend en parametre plant du tableau plantList
@@ -28,7 +29,11 @@ import React from "react"
 // la valeur de categorie sera une concatenation du tableau accumulateur dans dun nouveau tableau avec  valeur category de chaque element courant si les valeurs category sont differente 
 // ce qui nous permet d avoir un tableau stocké dans la variable categorie avec les differente valeur sans iterer sur les valeur semblables et se retrouver aves des valeurs de category identique dans liste de categorie
 
-function ShoppingList() {
+
+// recuperation du contenu du State parent commun APP,  et la fonction de mise à jour setState dans les props enfants  ici ShoppingList
+//pour que les enfants  de cart puisse mettre a jour le state du parent (app.js) de ShoppingList
+function ShoppingList({cart, updateCart}) {
+    console.log("cart",cart)
     const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
@@ -36,6 +41,8 @@ function ShoppingList() {
         	
 	)
     console.log( "categorie", categories)
+
+  
   
 	return (
 		<div className="shopping-list">
@@ -45,23 +52,41 @@ function ShoppingList() {
 				))}
 			</ul>
 			<ul className="list-plante">
-				{plantList.map( ({id, Cover, name, water, light, category, isBestSale, isSpecialOffer}) => 
+				{plantList.map( ({id, Cover, name, water, light, category, price, isBestSale, isSpecialOffer}) => 
+                <div key= {id} className="list-plante_card">
                     <PlantItem
-                    id={id}
                     cover={Cover}
                     name={name}
                     water={water}
                     light={light}
+                    price={price}
                     category={category}
                     isBestSale={isBestSale}
                     isSpecialOffer={isSpecialOffer}
-                />
-					
+                    />
+                    <button onClick={() => addToCart(name, price)}>Ajouter</button>
+				</div>
                 )}
 			</ul>
 		</div>
 	)
 
+    function addToCart(name, price) {
+		const currentPlantSaved = cart.find((plant) => plant.name === name)
+        console.log("currentplantsaved",currentPlantSaved)
+		if (currentPlantSaved) {
+			const cartFilteredCurrentPlant = cart.filter(// evite d avoir en plusieurs l ajout d une meme plante 
+				(plant) => plant.name !== name
+			)
+            console.log("cartfiltercurrentplant",cartFilteredCurrentPlant)
+			updateCart([
+				...cartFilteredCurrentPlant,
+				{ name, price, amount: currentPlantSaved.amount + 1 }
+			])
+		} else {
+			updateCart([...cart, { name, price, amount: 1 }])
+		}
+	}
    
 }
 
