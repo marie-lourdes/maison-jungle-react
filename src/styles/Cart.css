@@ -5,6 +5,8 @@
     flex-direction: column;
     justify-content: flex-start;
     padding-left: 10px;
+    border-radius: 5px;
+    margin-bottom:3.5%
 }
 
 .cart ul {
