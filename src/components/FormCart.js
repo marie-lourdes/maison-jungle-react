@@ -10,6 +10,7 @@ function FormCart (props, context, updater){
     
     return(
        <div className="forms">
+            <h2> Formulaire</h2>
             <form onSubmit={(e)=>handleSubmit(e)}>
                 {/* la fonction anonyme de l evenement onClick passe le parametre event à la fonction callback d evenment handlesubmit qui est appele avec les parenthese dans la fonction anonyme de onClick*/}
                 {/* valeur par default avec react et l attribut defaultValue*/ }
