@@ -21,7 +21,7 @@ function Cart() {
         <div>
             <h2>Panier</h2>
             <ul>
-              <li>Monstera : {monsteraPrice}€</li>  
+              <li> {cart} Monstera : {monsteraPrice}€</li>  
             </ul>
             <button onClick={()=> updateCart(cart +1)}>Ajouter</button>
       
