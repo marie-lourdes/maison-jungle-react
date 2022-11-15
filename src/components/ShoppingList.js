@@ -68,13 +68,15 @@ function ShoppingList({cart, updateCart}) {
 			</ul>
 		</div>
 	)
-
+// fonction ajouter au panier et met a jour le state cart de l app parent qui est recupere dans les props enfants: cart et shoppinList, cart utilisera le nouveau contenu recuperé depuis le stat parents pour tenir compte des cart produit ajouté et la quantié et le prix pour calculer le total
     function addToCart(name, price) {
+        //on recupere la plante si elle deja été ajouté a la cart
 		const currentPlantSaved = cart.find((plant) => plant.name === name)
         console.log("currentplantsaved",currentPlantSaved)
 		if (currentPlantSaved) {
 			const cartFilteredCurrentPlant = cart.filter(// evite d avoir en plusieurs fois l ajout d une plante deja ajouté, on incremente la quantité 
 				(plant) => plant.name !== name
+                //filter ne recupere que les elements qui ne sont pas la plante actuel pour ne pas rajouté en plusieurs fois
 			)
             console.log("cartfiltercurrentplant",cartFilteredCurrentPlant)
 			updateCart([
@@ -82,7 +84,8 @@ function ShoppingList({cart, updateCart}) {
 				{ name, price, amount: currentPlantSaved.amount + 1 }//on incremente la quantité a la quantité deja ajouté avnt (en ayant effacer l ajout du nom et prix et en gardant que la quantité precedente) et on recupere le nom et le prix de la plante actuellement ajouté 
 			])
 		} else {
-			updateCart([...cart, { name, price, amount: 1 }])// le spread ...concatene le contenu de cart dans le tableau avec le nouvel objet ajouté
+			updateCart([...cart, { name, price, amount: 1 }])
+            // le spread ...concatene le contenu du tableau cart dans le tableau avec le nouvel objet ajouté, si le tableau de cart est vide seul l objet est present dans le tableau lors de la mise a jour du state cart
 		}
 	}
    

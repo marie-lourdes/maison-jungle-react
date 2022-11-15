@@ -13,7 +13,6 @@ function Cart({cart, updateCart}) {
     //State isOpen avec valeur initial false pour l ouverture ou la fermeture du panier
     const [isOpen, setIsOpen] = useState(false)// panier ferme par defaut false
 
- 
     return (
     <div  className ="cart">
       { isOpen ?
@@ -31,8 +30,7 @@ function Cart({cart, updateCart}) {
 							</div>
 						))}
             </ul>
-            
-      
+               
             {/* calcul du total avec la valeur actuel de sate cart enregistré par la fonction setState (fonction setState(comprenant la valeur actuel en parametre) valeur de retour de useState) updateCart*/}
             <h3>Total : {total}€</h3>
             {/*initialise la valeur du Stae cart a zero pour vider le panier*/}
