@@ -1,17 +1,17 @@
 .shopping-list {
     width: 65%;
-	justify-content: center;
 	display: flex;
 	flex-direction:  column;
 	background: url("../assets/fond-ecran.jpg"); 
-	filter: saturate(120%)
+	filter: saturate(120%);
 	
-	
-   
+ 
 }
+
 ul {
 	list-style-type: none;
 }
+
 .shopping-list ul:first-child{
 	display: flex;
 	justify-content: space-evenly;
