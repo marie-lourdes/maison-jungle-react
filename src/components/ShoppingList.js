@@ -1,13 +1,16 @@
+import { useState } from 'react'
 import { plantList } from '../datas/plantList'
+import Categories from "./Categories"
 import PlantItem from './PlantItem'
 import '../styles/ShoppingList.css'
 
 function ShoppingList({ cart, updateCart }) {
-	const categories = plantList.reduce(
-		(acc, plant) =>
-			acc.includes(plant.category) ? acc : acc.concat(plant.category),
-		[]
-	)
+    const[categoryActive, setCategory] = useState("")
+    const categoriesPlant = plantList.reduce(
+        (acc, plant) =>
+            acc.includes(plant.category) ? acc : acc.concat(plant.category),
+        []
+    )
 
 	function addToCart(name, price) {
 		const currentPlantSaved = cart.find((plant) => plant.name === name)
@@ -26,13 +29,15 @@ function ShoppingList({ cart, updateCart }) {
 
 	return (
 		<div className='lmj-shopping-list'>
-			<ul>
-				{categories.map((cat) => (
-					<li key={cat}>{cat}</li>
-				))}
-			</ul>
+			
+                <Categories  categories= {categoriesPlant} categoryActive= {categoryActive} setCategory= {setCategory}/>
+				
+			
 			<ul className='lmj-plant-list'>
-				{plantList.map(({ id, cover, name, water, light, price }) => (
+				{plantList.map(({ id, cover, name, water, light, price, category }) => 
+                !categoryActive || categoryActive === category ? ( 
+                // si aucune categorie a ete selectionné on affiche toutes les plante
+                // si la categoryActive du State correspond a la category des plante itéré par map affiché ces plantes
 					<div key={id}>
 						<PlantItem
 							cover={cover}
@@ -43,7 +48,8 @@ function ShoppingList({ cart, updateCart }) {
 						/>
 						<button onClick={() => addToCart(name, price)}>Ajouter</button>
 					</div>
-				))}
+				): null
+                )}
 			</ul>
 		</div>
 	)
