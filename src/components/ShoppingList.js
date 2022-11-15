@@ -42,8 +42,6 @@ function ShoppingList({cart, updateCart}) {
 	)
     console.log( "categorie", categories)
 
-  
-  
 	return (
 		<div className="shopping-list">
 			<ul>
@@ -75,16 +73,16 @@ function ShoppingList({cart, updateCart}) {
 		const currentPlantSaved = cart.find((plant) => plant.name === name)
         console.log("currentplantsaved",currentPlantSaved)
 		if (currentPlantSaved) {
-			const cartFilteredCurrentPlant = cart.filter(// evite d avoir en plusieurs l ajout d une meme plante 
+			const cartFilteredCurrentPlant = cart.filter(// evite d avoir en plusieurs fois l ajout d une plante deja ajouté, on incremente la quantité 
 				(plant) => plant.name !== name
 			)
             console.log("cartfiltercurrentplant",cartFilteredCurrentPlant)
 			updateCart([
 				...cartFilteredCurrentPlant,
-				{ name, price, amount: currentPlantSaved.amount + 1 }
+				{ name, price, amount: currentPlantSaved.amount + 1 }//on incremente la quantité a la quantité deja ajouté avnt (en ayant effacer l ajout du nom et prix et en gardant que la quantité precedente) et on recupere le nom et le prix de la plante actuellement ajouté 
 			])
 		} else {
-			updateCart([...cart, { name, price, amount: 1 }])
+			updateCart([...cart, { name, price, amount: 1 }])// le spread ...concatene le contenu de cart dans le tableau avec le nouvel objet ajouté
 		}
 	}
    
