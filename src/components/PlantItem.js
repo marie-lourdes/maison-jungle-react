@@ -23,6 +23,7 @@ function PlantItem({  cover, name, water, light, category,price, isBestSale, isS
 			
 		
 			{isSpecialOffer && <div className= "list-item--promo"> Soldes</div>}
+			<div className="list-item--price">{price}€</div>
 			
            
             {/* determine la valeur de la propriété scaleValue, careType de l objet props du composant CareScale*/}

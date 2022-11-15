@@ -45,12 +45,29 @@ ul.list-plante .list-plante__list-item {
 
 	position: absolute;
 	right: 0px;
-	top: 10px;
+	bottom: 0px;
 	font-weight: 500;
 	color: white;
 	padding: 5px 10px;
-	background-color:#569749;
+	background-color:#eb0d0d;
+
 }
+
+.list-item--price {
+    position: absolute; 
+    width: 20%;
+    height: 20%;
+    border-radius: 20px 0 20px 0;
+    right:0;
+    background-color:#569749;
+    text-align: center;
+    line-height: 300%;
+}
+
+
+
+
+
 
 .list-plante_description {
     display:flex;

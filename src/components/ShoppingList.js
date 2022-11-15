@@ -1,5 +1,7 @@
 import React from "react"
+import { useState } from "react"
 import plantList from "../datas/dataplantList"
+import Categories from "./Categories"
 import PlantItem from "./PlantItem"
 import "../styles/ShoppingList.css"
 
@@ -34,6 +36,7 @@ import "../styles/ShoppingList.css"
 //pour que les enfants  de cart puisse mettre a jour le state du parent (app.js) de ShoppingList
 function ShoppingList({cart, updateCart}) {
     console.log("cart",cart)
+    const [categoryActive, setCategoryActive] = useState("")
     const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
@@ -44,13 +47,10 @@ function ShoppingList({cart, updateCart}) {
 
 	return (
 		<div className="shopping-list">
-			<ul>
-				{categories.map((cat) => (
-					<li Key={cat}>{cat}</li> // une clé unique crée avec la valeur de chaque categorie
-				))}
-			</ul>
+			<Categories categoryActive= {categoryActive} setCategoryActive={setCategoryActive} categories= {categories}/>
 			<ul className="list-plante">
 				{plantList.map( ({id, Cover, name, water, light, category, price, isBestSale, isSpecialOffer}) => 
+                !categoryActive || categoryActive === category ?
                 <div key= {id} className="list-plante_card">
                     <PlantItem
                     cover={Cover}
@@ -64,6 +64,7 @@ function ShoppingList({cart, updateCart}) {
                     />
                     <button onClick={() => addToCart(name, price)}>Ajouter</button>
 				</div>
+                : null
                 )}
 			</ul>
 		</div>
