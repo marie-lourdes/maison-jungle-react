@@ -1,5 +1,5 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import FormCart from "./FormCart"
 import "../styles/Cart.css"
 // recuperation du contenu du State parent commun APP,  et la fonction de mise à jour setState dans les props enfants  ici CART
@@ -12,6 +12,14 @@ function Cart({cart, updateCart}) {
    
     //State isOpen avec valeur initial false pour l ouverture ou la fermeture du panier
     const [isOpen, setIsOpen] = useState(false)// panier ferme par defaut false
+
+    // test alert affichage du total : bloque la suite du code il faut appuyer sur ok dans la fenêtre d alert pour que le re render fonction avec le return
+   /*alert( ` total du panier ${total}`);*/
+
+    // test alert afficahge ddu total avec l action effet de bords useEffect()
+    useEffect(() => {
+      alert( ` total du panier ${total}`)
+     }, [total] )
 
     return (
     <div  className ="cart">
