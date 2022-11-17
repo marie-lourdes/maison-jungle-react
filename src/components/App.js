@@ -12,6 +12,8 @@ function App() {
     //State composant cart avec valeur initial tableau vide pour le nombre d element ajouté au panier
      const [cart, updateCart] = useState([]);
      const [categoryActive, setCategoryActive] = useState("");
+     //state pour cacher le footer et nettoyer les effets dans footer.js 
+    const [isFooterShown, setFooterShown] = useState(true)
 
   
  
@@ -23,10 +25,18 @@ function App() {
             au composant cart et Shoopinglist avec les meme mise jour de State actuel et qui partageront la fonction updateCart(setState) à leurs enfants respectifs
             et mettreb a jour le state du parent commun qui repartagera les states actuel au travers des props des enfants*/}
 			<Cart cart={cart} updateCart={updateCart} categoryActive={categoryActive} setCategoryActive={setCategoryActive}/>
-			<ShoppingList cart={cart} updateCart={updateCart} categoryActive={categoryActive} setCategoryActive={setCategoryActive}/>
+			
+            {/* Cacher le footer du dom*/}
+        <button className= "main-buttons" onClick={()=>setFooterShown(false)}>
+            CACHER
+        </button>
+        <ShoppingList cart={cart} updateCart={updateCart} categoryActive={categoryActive} setCategoryActive={setCategoryActive}/>
         </main>
 		<div className="separator"></div>
-		<Footer/>
+        
+       {/* montre le footer avec la valeur par defaut et initial de useState à true*/}
+		 {isFooterShown &&   <Footer cart= {cart}/>} 
+        {/*<Footer cart= {cart}/>*/}
         </React.Fragment>
     )
 }

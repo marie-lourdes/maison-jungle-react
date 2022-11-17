@@ -1,4 +1,5 @@
 import React from "react"
+
 import plantList from "../datas/dataplantList"
 import Categories from "./Categories"
 import PlantItem from "./PlantItem"
@@ -35,7 +36,7 @@ import "../styles/ShoppingList.css"
 //pour que les enfants  de cart puisse mettre a jour le state du parent (app.js) de ShoppingList
 function ShoppingList({cart, updateCart, categoryActive, setCategoryActive}) {
     console.log("cart",cart)
-    const categories = plantList.reduce(
+  const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
 		[]// le tableau vide:deuxieme parametre la valeur initial utilisé par l accumulateur au premier appel de reduce()
@@ -93,7 +94,7 @@ function ShoppingList({cart, updateCart, categoryActive, setCategoryActive}) {
 /* AVEC CONDITION TERNAIRE
 
 {plantList.map((plant) => (
-					<li Key={plant.id}>{plant.name} {plant.isBestSale ? <span>&#128293;</span>: <span>&#128078;</span> }</li>// clé unique crée avec les id des plante
+					<li key={plant.id}>{plant.name} {plant.isBestSale ? <span>&#128293;</span>: <span>&#128078;</span> }</li>// clé unique crée avec les id des plante
 				))}*/
 
              
