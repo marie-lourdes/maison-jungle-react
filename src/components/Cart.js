@@ -13,7 +13,7 @@ function Cart({cart, updateCart, categoryActive,isFooterShown, setFooterShown })
 	)
    
   //state pour cacher le footer et nettoyer les effets dans footer.js 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
   // test alert affichage du total : bloque la suite du code il faut appuyer sur ok dans la fenêtre d alert pour que le re render fonction avec le return
    
@@ -44,6 +44,9 @@ function Cart({cart, updateCart, categoryActive,isFooterShown, setFooterShown })
      // le contenu du panier avec les monsteras ajouté au panier
      <div>
         <button className="button-toogle button-toogle--close" onClick= {() => setIsOpen(false)}>Fermer le panier ❌</button>
+		{/* le panier est  ouver par defaut affichera le contenu du panier si il y a au moins un plante ajouté
+		sinon affiche dans le panier "le panier est vide*/}
+		{cart.length > 0 ?
         <div>
             <h2>Panier</h2>
             <ul>
@@ -59,6 +62,7 @@ function Cart({cart, updateCart, categoryActive,isFooterShown, setFooterShown })
             {/*initialise la valeur du Stae cart a zero pour vider le panier*/}
             <button className=" main-buttons emptyCart" onClick={() => updateCart([])}>Vider le panier</button>
         </div>
+        : <div> Votre panier est vide </div>}     
       </div> : 
       // si c est false, le panier est fermé on affiche un button toogle ouvrir le panier 
       // qui au click en met a jour le state isOpen avec setIsOpen qui renverra true  à la premier condition true et genere le panier
