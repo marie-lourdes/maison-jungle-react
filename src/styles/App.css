@@ -22,10 +22,8 @@ font-weight: 700;
   width: 50%;
   margin: 0 auto;
   position: relative;
-  bottom: -60%;
+  bottom: -50%;
   border:2px solid black;
- 
-  
   
 }
 
@@ -33,6 +31,14 @@ font-weight: 700;
   background-color:#569749;
   border:2px solid #144508;
 }
+
+.main-buttons--addCart:hover {
+  border-style: ridge;
+  box-shadow: 0px 15px 9px -5px #66381A ;
+  border-width: 3px;
+  
+}
+
 
 
 .separator {
