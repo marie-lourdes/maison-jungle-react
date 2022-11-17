@@ -4,22 +4,38 @@ import FormCart from "./FormCart"
 import "../styles/Cart.css"
 // recuperation du contenu du State parent commun APP,  et la fonction de mise à jour setState dans les props enfants  ici CART
 //pour que les enfants  de cart puisse mettre a jour le state du parent (app.js) de Cart
-function Cart({cart, updateCart}) {
+function Cart({cart, updateCart, categoryActive, setCategoryActive}) {
+
+ 
   const total = cart.reduce(
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
 	)
    
-    //State isOpen avec valeur initial false pour l ouverture ou la fermeture du panier
-    const [isOpen, setIsOpen] = useState(false)// panier ferme par defaut false
+   
+  //State isOpen avec valeur initial false pour l ouverture ou la fermeture du panier
+  const [isOpen, setIsOpen] = useState(false)// panier ferme par defaut false
 
-    // test alert affichage du total : bloque la suite du code il faut appuyer sur ok dans la fenêtre d alert pour que le re render fonction avec le return
-   /*alert( ` total du panier ${total}`);*/
+  // test alert affichage du total : bloque la suite du code il faut appuyer sur ok dans la fenêtre d alert pour que le re render fonction avec le return
+   
+  /*alert( ` total du panier ${total}`);*/
 
-    // test alert afficahge ddu total avec l action effet de bords useEffect()
-    useEffect(() => {
-      alert( ` total du panier ${total}`)
-     }, [total] )
+  // afficher l alerte uniquement au premier render (et pas a chaque re render du composant) du composant cart avec le tableau vide en deuxieme parametre de useEffect
+  // en raffraichissant la page
+  useEffect( () => {
+    alert( ` Bienvenue de la maison jungle`)
+    }, [] );
+
+  // afficher le total a chaque modification du total dans le titre de l onglet 
+  useEffect( () => {
+    document.title = ` LMJ: ${total}€ d'achats` 
+  }, [total])
+
+      
+  //test alert afficahge ddu total et category du parent Shoppinglist avec l action effet de bords useEffect() a chaque modification de total et du state parent(app) category
+  useEffect( () => {
+   alert(`total panier: ${total}€ et la plante categorie: ${categoryActive} `)    
+    }, [total , categoryActive])
 
     return (
     <div  className ="cart">

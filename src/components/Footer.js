@@ -1,5 +1,5 @@
 // import de la fonction useState de react
-import { useState } from 'react'
+import { useState} from "react"
 
 import '../styles/Footer.css'
 
@@ -7,6 +7,7 @@ function Footer() {
 	const [inputValue, setInputValue] = useState('adresse mail')
 	console.log("input value", inputValue)
     const isInputErrorMail = inputValue.includes("@");
+	
 	return (
 		<footer className='footer'>
 			<div className='footer_elem'>

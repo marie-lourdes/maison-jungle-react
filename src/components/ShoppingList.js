@@ -1,5 +1,4 @@
 import React from "react"
-import { useState } from "react"
 import plantList from "../datas/dataplantList"
 import Categories from "./Categories"
 import PlantItem from "./PlantItem"
@@ -34,9 +33,8 @@ import "../styles/ShoppingList.css"
 
 // recuperation du contenu du State parent commun APP,  et la fonction de mise à jour setState dans les props enfants  ici ShoppingList
 //pour que les enfants  de cart puisse mettre a jour le state du parent (app.js) de ShoppingList
-function ShoppingList({cart, updateCart}) {
+function ShoppingList({cart, updateCart, categoryActive, setCategoryActive}) {
     console.log("cart",cart)
-    const [categoryActive, setCategoryActive] = useState("")
     const categories = plantList.reduce(
 		(acc, plant) =>
 			acc.includes(plant.category) ? acc : acc.concat(plant.category),
