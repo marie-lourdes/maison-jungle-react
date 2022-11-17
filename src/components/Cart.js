@@ -12,6 +12,9 @@ function Cart({ cart, updateCart }) {
 		document.title = `LMJ: ${total}€ d'achats`
 	}, [total])
 
+ localStorage.setItem("cart", JSON.stringify(cart));
+ const cartStorage = JSON.parse(localStorage.getItem("cart"));
+
 	return isOpen ? (
 		<div className='lmj-cart'>
 			<button
