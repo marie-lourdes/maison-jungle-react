@@ -36,7 +36,7 @@ function Cart({cart, updateCart, categoryActive, setCategoryActive}) {
   useEffect( () => {
    alert(`total panier: ${total}€ et la plante categorie: ${categoryActive} `)    
     }, [total , categoryActive])
-
+kotyki
     return (
     <div  className ="cart">
       { isOpen ?
