@@ -61,7 +61,7 @@ function ShoppingList({cart, updateCart, categoryActive, setCategoryActive}) {
                     isBestSale={isBestSale}
                     isSpecialOffer={isSpecialOffer}
                     />
-                    <button onClick={() => addToCart(name, price)}>Ajouter</button>
+                    <button className= "main-buttons main-buttons--addCart" onClick={() => addToCart(name, price)}>Ajouter</button>
 				</div>
                 : null
                 )}

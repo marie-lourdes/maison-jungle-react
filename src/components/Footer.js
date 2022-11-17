@@ -31,12 +31,10 @@ function Footer( {cart}) {
 
 	//- useEffect avec l evenement du bouton qui retire le footer du dom et va re-render le composant app.js avec le State isFooterShow
     useEffect( () => {
-		
-		
 		//le return permet d esxecuter une fonction meme lorsque le composant n est plus dans le DOM l effet n est pas directement executer,
-		//l effet est produit apres le re-render de app avec le footer supprimé  et pour executer cette action useEffect sur un composant qui n est plus dans le dom
+		//l effet est produit apres le re-render de app avec le footer supprimé (depuis le bouton cacher dans le panier Cart.js) et pour executer cette action useEffect sur un composant qui n est plus dans le dom
 		//on retourne une fonction  qui executera l action du useeffect
-		return ()=> {
+		return () => {
 				console.log("affiche quand le footer est retiré du dom avec le boutton cacher et state is FooterShown de App.js")
 		}
 		

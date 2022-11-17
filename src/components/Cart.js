@@ -4,7 +4,7 @@ import FormCart from "./FormCart"
 import "../styles/Cart.css"
 // recuperation du contenu du State parent commun APP,  et la fonction de mise à jour setState dans les props enfants  ici CART
 //pour que les enfants  de cart puisse mettre a jour le state du parent (app.js) de Cart
-function Cart({cart, updateCart, categoryActive, setCategoryActive}) {
+function Cart({cart, updateCart, categoryActive,isFooterShown, setFooterShown }) {
 
  
   const total = cart.reduce(
@@ -12,9 +12,8 @@ function Cart({cart, updateCart, categoryActive, setCategoryActive}) {
 		0
 	)
    
-   
-  //State isOpen avec valeur initial false pour l ouverture ou la fermeture du panier
-  const [isOpen, setIsOpen] = useState(false)// panier ferme par defaut false
+  //state pour cacher le footer et nettoyer les effets dans footer.js 
+  const [isOpen, setIsOpen] = useState(false)
 
   // test alert affichage du total : bloque la suite du code il faut appuyer sur ok dans la fenêtre d alert pour que le re render fonction avec le return
    
@@ -68,6 +67,10 @@ function Cart({cart, updateCart, categoryActive, setCategoryActive}) {
       <button  className="button-toogle button-toogle--open" onClick={() => setIsOpen(true)}>Ouvrir le panier</button>
       </div>}
       <FormCart/>
+         {/* Cacher le footer du dom*/}
+         <button className= "main-buttons main-buttons--Cart" onClick={()=>setFooterShown(false)}>
+            CACHER
+        </button>
      
   </div>
     )
