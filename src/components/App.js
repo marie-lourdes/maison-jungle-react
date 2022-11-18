@@ -17,7 +17,8 @@ function App() {
 	//si le localstorage contient des valeur dans le "cart" on parse et on l attribue à la valeur initial de useState
 	const savedCart = localStorage.getItem('cart')
 	const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : [])
-	useEffect(() => {// enregistre a chaque mise a jour du State cart de app.js, mis a jour par shoppingList qui a recupéré la fonction setState de app.s dans la prop, et cart.js le composant recupere la valeur de state cart dans ses props pour afficher l ajout de shoppingList
+	// enregistrement dans le localstorage a chaque modification du start cart et du re-render de app
+    useEffect(() => {// enregistre a chaque mise a jour du State cart de app.js, mis a jour par shoppingList qui a recupéré la fonction setState de app.s dans la prop, et cart.js le composant recupere la valeur de state cart dans ses props pour afficher l ajout de shoppingList
 		//enregistre apres le re render de app er la mise a jour de state cart de apps.js
 		localStorage.setItem('cart', JSON.stringify(cart))
 	}, [cart])
